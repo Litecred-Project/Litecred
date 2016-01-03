@@ -1,0 +1,9 @@
+Building litecred
+
+See doc/readme-qt.rst for instructions on building litecred QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of litecred.
+
+See doc/build-*.txt for instructions on building litecredd,
+the intended-for-services, no-graphical-interface, reference
+implementation of litecred.
