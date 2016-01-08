@@ -11,10 +11,11 @@ Maturity: 25 Blocks
 Max Block Size: 8MB
 Pow Supply: 78.835,200
 Pow Blocks: 1.051.200
+Self-Funding Block subsidy: 10%
 
 Block Structure:
 Blocks 0-10: 26.278.400 Airdrop Faucet Distribution
-Blocks 10-100: 100 -1800-
+Blocks 10-100: 20 -1800-
 Blocks 100-1051200: 50 LTCR -52.555.000- 1 Year Mining Approx.
 
 Node:
