@@ -26,7 +26,7 @@ namespace Checkpoints
         boost::assign::map_list_of
             ( 0, hashGenesisBlock )
             ( 14, fCheckPoint1)
-
+            ( 13925, fCheckPoint2)
 
 
     ;
@@ -351,7 +351,7 @@ namespace Checkpoints
 }
 
 // litecred: sync-checkpoint master key
-const std::string CSyncCheckpoint::strMasterPubKey = "04587878bb82fe8dd545ee2a7d704235eff69dec1a00f7d94fb440ced380d86d27f100a5d77488841e8daa38df87f19c761925dbbf95fc97e75f356bef5d88add1";
+const std::string CSyncCheckpoint::strMasterPubKey = "308201130201010420ecbd6b053336f98f283d717726959196dafeb93c6a05544da3abdca563e118fba081a53081a2020101302c06072a8648ce3d0101022100fffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f300604010004010704410479be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8022100fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141020101a14403420004f400e35f1fd205040ff81b5d4023951052c3a542388d2ead967dfc896c9dc498835016efb090337c2387c7ed25c611fff587ed1faf3948730f9490bac5f47168";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
