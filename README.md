@@ -9,9 +9,9 @@ Algo: Qubit
 Retargeting: 30 Seconds
 Maturity: 25 Blocks
 Max Block Size: 8MB
-Pow Supply: 78.835,200
-Pow Blocks: 1.051.200
-Self-Funding Block subsidy: 10%
+Pow Supply: 98.835,250
+Pow Blocks: 1.622.630
+Self-Funding Block subsidy: 11.4%
 
 Block Structure:
 Blocks 0-10: 26.278.400 Airdrop Faucet Distribution
@@ -19,11 +19,11 @@ Blocks 10-100: 20 -1800-
 Blocks 100-1051200: 50 LTCR -52.555.000- 1 Year Mining Approx.
 
 Node:
-52.10.194.42
-52.33.162.210
+litenode1.litecred.org
+litenode2.litecred.org
 
 RPC port: 8887
-Port:     8886
+Port:     8868
 
 
 PoS:
