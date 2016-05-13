@@ -50,7 +50,7 @@ static const int64_t nInterval = nTargetTimespan_legacy / nTargetSpacing; // nIn
 
 static const int64_t nTargetTimespan = 16 * 60; // nTargetTimespan = 960
 
-int64_t devCoin = 5 * COIN;
+int64_t devCoin = 4 * COIN;
 int nCoinbaseMaturity = 15;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -983,8 +983,13 @@ int64_t GetProofOfWorkReward(int64_t nFees)
         if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
         return nSubsidy + nFees;
-    } else if (pindexBest->nHeight < 1051200){ //  47299500  [52555000 Total] [1051200 Blocks 1 Year PoW Approx]
+    } else if (pindexBest->nHeight < 180000){
         int64_t nSubsidy = 50 * COIN;
+        if (fDebug && GetBoolArg("-printcreation"))
+        printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
+        return nSubsidy + nFees;
+    } else if (pindexBest->nHeight < 1622630){
+        int64_t nSubsidy = 35 * COIN;
         if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
         return nSubsidy + nFees;
@@ -994,18 +999,24 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 }
 
 
-// miner's coin stake reward based on coin age spent (coin-days) FIXED PoS SUBSIDY REWARD [10512000 Approx. LTCR minted every year]
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
 {
-   // int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
-    int64_t nSubsidy = 10 * COIN;
+    int64_t nSubsidy;
+        
+// POS reward = [5% Annually] [15 LTCR Max Stake Reward Limit till POW ends! then staking false back to 2% Annually with no limits] 
+    if (pindexBest->nHeight < 1622630){
+        nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+        if(nSubsidy > 15 * COIN) nSubsidy = 15 * COIN;
+    } else {
+        int64_t nCOIN_YEAR_REWARD = 2 * CENT;
+        nSubsidy = nCoinAge * nCOIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+    }
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
 
     return nSubsidy + nFees;
 }
-
 
 
 
