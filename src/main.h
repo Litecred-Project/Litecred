@@ -27,7 +27,7 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-static const int LAST_POW_BLOCK = 1051200;
+static const int LAST_POW_BLOCK = 1622630;
 
 static const unsigned int MAX_BLOCK_SIZE = 8000000;
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
@@ -37,11 +37,11 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 10000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 80000000 * COIN;
-static const int64_t MAX_MINT_PROOF_OF_STAKE = 0.02 * COIN;	// 2% Interest 
-static const int64_t COIN_YEAR_REWARD = 2 * CENT; //(output to console will be updated)
-static const int MODIFIER_INTERVAL_SWITCH = 1050200; // PoS begin 1k Blocks before PoW 
+static const int64_t MAX_MINT_PROOF_OF_STAKE = 0.05 * COIN;	// 5% Interest 
+static const int64_t COIN_YEAR_REWARD = 5 * CENT; //(output to console will be updated)
+static const int MODIFIER_INTERVAL_SWITCH = 180000; // PoS begin 1k Blocks before PoW 
 
-#define FOUNDATION "BCDrF1hWdKTmrjXXVFTezPjKBmGigmaXg5"
+#define FOUNDATION "B5QH5bEA7VQkvNb5udAvLo2QsZnCRcZkXw"
 #define FOUNDATION_TEST "0x"
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
